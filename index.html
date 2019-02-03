@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+	<article>
+	<p>Расчета коэффициентов Райта по упрощенной методике Шплисса</p>
+  <hr id="system-readmore" />
+  <i>
+	Выберите по линии матери все поля, где встречается интересующий предок.
+	Затем выберите по линии отца все поля, где встречается этот же предок.
+	Нажмите "Рассчитать".
+</i>
+</article>
+
+<table class="pedigreetable">
+	<tr>
+		<td>
+			<table id="rowfemale">	
+				<tr>
+					<td rowspan="8" class='f1'>Madame</td>
+					<td rowspan="4" class='f2'>Grandmother</td>
+					<td rowspan="2" class='f3 p1'>Great-grandmother</td>
+					<td class='f4 p1'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p1'>great-great-grandfather</td>
+				</tr>
+				<tr>
+					<td rowspan="2" class='m3 p1'>Great-grandfather</td>
+					<td class='f4 p2'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p2'>great-great-grandfather</td>
+				</tr>
+				<tr>
+					<td rowspan="4" class='m2'>Grandfather</td>
+					<td rowspan="2" class='f3 p2'>Great-grandmother</td>
+					<td class='f4 p3'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p3'>great-great-grandfather</td>
+				</tr>
+				<tr>
+					<td rowspan="2" class='m3 p2'>Great-grandfather</td>
+					<td class='f4 p4'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p4'>great-great-grandfather</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<table id="rowmale">
+				<tr>
+					<td rowspan="8" class='m1'>Sir</td>
+					<td rowspan="4" class='f2'>Grandmother</td>
+					<td rowspan="2" class='f3 p1'>Great-grandmother</td>
+					<td class='f4 p1'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p1'>great-great-grandfather</td>
+				</tr>
+				<tr>
+					<td rowspan="2" class='m3 p1'>Great-grandfather</td>
+					<td class='f4 p2'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p2'>great-great-grandfather</td>
+				</tr>
+				<tr>
+					<td rowspan="4" class='m2'>Grandfather</td>
+					<td rowspan="2" class='f3 p2'>Great-grandmother</td>
+					<td class='f4 p3'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p3'>great-great-grandfather</td>
+				</tr>
+				<tr>
+					<td rowspan="2" class='m3 p2'>Great-grandfather</td>
+					<td class='f4 p4'>great-great-grandmother</td>
+				</tr>
+				<tr>
+					<td class='m4 p4'>great-great-grandfather</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<div onclick="countElement()" class="btn pedigree-script-starter">Рассчитать</div>
+
+<div id="pedigree-script-result"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./inbreeding-coefficients.js"></script>
+	
+</body>
+</html>
