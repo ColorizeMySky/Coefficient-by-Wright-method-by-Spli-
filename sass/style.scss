@@ -1,0 +1,49 @@
+$darkGrey: #2a2a2a;
+
+$colors: azure, beige, coral, darkseagreen, mediumorchid, silver, teal;
+
+.pedigreetable {
+	width: 100%;
+	box-shadow: 0px 0px 10px 1px $darkGrey;
+  border-radius: 5px;
+  border: 2px solid $darkGrey;
+  margin-top: 50px;
+
+  td {
+    padding: 0;
+  }
+
+  #rowfemale, #rowmale {
+    width: 100%;
+
+    td {
+      width: 25%;
+      border: 1px solid $darkGrey;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+}
+
+.selected-td {
+  font: {
+    weight: 900;
+  }
+}
+@each $color in $colors {
+  .#{$color} {
+    background-color: #{$color};
+  }
+}
+
+.inactive {
+  pointer-events: none;
+  background-color: grey;
+}
+
+
+@media (max-width: 420px) {
+	.pedigreetable {
+		font-size: 10px;
+	}
+}
