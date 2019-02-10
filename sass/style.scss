@@ -42,6 +42,9 @@ $colors: azure, beige, coral, darkseagreen, mediumorchid, silver, teal;
   background-color: $mainBackgroundGrey;
   color: $lightGrey;
 }
+.blocked {
+  color: $lightGrey;
+}
 
 
 @media (max-width: 420px) {

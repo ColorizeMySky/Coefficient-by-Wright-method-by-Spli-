@@ -68,8 +68,13 @@
   color: #919191;
 }
 
+/* line 45, ../sass/style.scss */
+.blocked {
+  color: #919191;
+}
+
 @media (max-width: 420px) {
-  /* line 48, ../sass/style.scss */
+  /* line 51, ../sass/style.scss */
   .pedigreetable {
     font-size: 10px;
   }

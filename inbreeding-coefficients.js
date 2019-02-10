@@ -6,7 +6,7 @@ let summ = []; //arrays of all lines of ancestor
 
 
 table.addEventListener('click', function(event){
-  if(!event.target.classList.contains('inactive')) {
+  if(!event.target.classList.contains('inactive') && !event.target.classList.contains("blocked") ) {
     event.target.classList.toggle("selected-td");
     event.target.classList.toggle(colors[ancestorQuantity]);
   
@@ -16,13 +16,13 @@ table.addEventListener('click', function(event){
   
           let inactive = document.querySelectorAll('.m1, .m2, .m3, .m4');
           for (let item of inactive) {
-            item.classList.add("inactive");
+            if(!item.classList.contains("blocked")) item.classList.add("inactive");
           }
       }
       else {
         let inactive = document.querySelectorAll('.f1, .f2, .f3, .f4');
         for (let item of inactive) {
-          item.classList.add("inactive");
+          if(!item.classList.contains("blocked")) item.classList.add("inactive");
         }
       }
     }
@@ -56,8 +56,22 @@ function addAncestor() {
     document.querySelector('#pedigree-script-result')
       .innerHTML = "Количество предков более " + colors.length + " не поддерживается в настоящее время";
   }
+  else {
+    getCoefficient();
 
+    const selectedTd = document.querySelectorAll('.selected-td');
+    for (var i = 0; i < selectedTd.length; i++) {
+      selectedTd[i].classList.add("blocked");
+      selectedTd[i].classList.remove("selected-td");
+    }
 
+    const inactive = document.querySelectorAll('.inactive');
+    for (var i = 0; i < inactive.length; i++) {
+      inactive[i].classList.remove("inactive");
+    }
+
+    ancestorQuantity++;
+  }
 }
 
 
@@ -74,13 +88,15 @@ function getCoefficient() {  //get coefficient for one ancestor
       result.push(Math.pow(0.5, fem + sir - 1) * 100 );
     }
   }
-  summ.push(result);
+  result.length == 0 ? false : summ.push(result);
 }
 
 
 function count() { //final result
   getCoefficient();
-  
+
+  if(summ.length == 0) return;
+
   summ = summ.map( arr => arr.reduce((sum, current) => {
     return sum + current;
   }));
