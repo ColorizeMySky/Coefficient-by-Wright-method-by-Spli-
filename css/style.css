@@ -13,8 +13,9 @@
 /* line 18, ../sass/style.scss */
 .pedigreetable #rowfemale, .pedigreetable #rowmale {
   width: 100%;
+  color: #2a2a2a;
 }
-/* line 21, ../sass/style.scss */
+/* line 22, ../sass/style.scss */
 .pedigreetable #rowfemale td, .pedigreetable #rowmale td {
   width: 25%;
   border: 1px solid #2a2a2a;
@@ -22,59 +23,64 @@
   padding: 10px;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 .selected-td {
   font-weight: 900;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .azure {
   background-color: azure;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .beige {
   background-color: beige;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .coral {
   background-color: coral;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .darkseagreen {
   background-color: darkseagreen;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .mediumorchid {
   background-color: mediumorchid;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .silver {
   background-color: silver;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .teal {
   background-color: teal;
 }
 
-/* line 41, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 .inactive {
   background-color: #ecebeb;
   color: #919191;
 }
 
-/* line 45, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 .blocked {
   color: #919191;
 }
 
+/* line 49, ../sass/style.scss */
+.unclickable {
+  pointer-events: none;
+}
+
 @media (max-width: 420px) {
-  /* line 51, ../sass/style.scss */
+  /* line 55, ../sass/style.scss */
   .pedigreetable {
     font-size: 10px;
   }

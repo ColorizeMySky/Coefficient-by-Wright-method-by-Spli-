@@ -97,6 +97,16 @@ function count() { //final result
 
   if(summ.length == 0) return;
 
+  const inactive = document.querySelectorAll('.inactive');
+  for (var i = 0; i < inactive.length; i++) {
+    inactive[i].classList.remove("inactive");
+  }
+  const allTd = document.querySelectorAll('td');
+  for (var i = 0; i < allTd.length; i++) {
+    if(allTd[i].classList.contains("selected-td") ) allTd[i].classList.remove("selected-td");
+    if(!allTd[i].classList.contains("blocked") ) allTd[i].classList.add("blocked");
+  }
+
   summ = summ.map( arr => arr.reduce((sum, current) => {
     return sum + current;
   }));
@@ -114,4 +124,25 @@ function count() { //final result
 
   document.querySelector('#inbreeding-script-result').innerHTML += "Общий инбридинг: <br>" + total + "%"
 
+  document.querySelector('#add-ancestor').classList.add("unclickable");
+}
+
+
+function clearAll() {
+  document.querySelector('#inbreeding-script-result').innerHTML = '';
+
+  const allTd = document.querySelectorAll('td');
+  for (var i = 0; i < allTd.length; i++) {
+    if(allTd[i].classList.contains("selected-td") ) allTd[i].classList.remove("selected-td");
+    if(allTd[i].classList.contains("blocked") ) allTd[i].classList.remove("blocked");
+    if(allTd[i].classList.contains("inactive") ) allTd[i].classList.remove("inactive");
+
+    for (let color of colors) {
+      if(allTd[i].classList.contains(color) ) allTd[i].classList.remove(color);
+    }
+  }
+  document.querySelector('#add-ancestor').classList.remove("unclickable");
+
+  ancestorQuantity = 0;
+  summ = []; 
 }

@@ -17,6 +17,7 @@ $colors: azure, beige, coral, darkseagreen, mediumorchid, silver, teal;
 
   #rowfemale, #rowmale {
     width: 100%;
+    color: $darkGrey;
 
     td {
       width: 25%;
@@ -44,6 +45,9 @@ $colors: azure, beige, coral, darkseagreen, mediumorchid, silver, teal;
 }
 .blocked {
   color: $lightGrey;
+}
+.unclickable {
+  pointer-events: none;
 }
 
 
