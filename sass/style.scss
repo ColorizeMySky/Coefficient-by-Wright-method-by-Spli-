@@ -1,4 +1,6 @@
 $darkGrey: #2a2a2a;
+$lightGrey: #919191;
+$mainBackgroundGrey: #ecebeb; //inactive class
 
 $colors: azure, beige, coral, darkseagreen, mediumorchid, silver, teal;
 
@@ -37,8 +39,8 @@ $colors: azure, beige, coral, darkseagreen, mediumorchid, silver, teal;
 }
 
 .inactive {
-  pointer-events: none;
-  background-color: grey;
+  background-color: $mainBackgroundGrey;
+  color: $lightGrey;
 }
 
 
